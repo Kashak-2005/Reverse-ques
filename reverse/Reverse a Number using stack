@@ -1,0 +1,24 @@
+import java.util.Stack;
+
+public class ReverseNumber {
+    public static int reverseNumber(int num) {
+        Stack<Character> stack = new Stack<>();
+        String numStr = String.valueOf(num);
+
+        for (char digit : numStr.toCharArray()) {
+            stack.push(digit);
+        }
+
+        StringBuilder reversedNum = new StringBuilder();
+        while (!stack.isEmpty()) {
+            reversedNum.append(stack.pop());
+        }
+
+        return Integer.parseInt(reversedNum.toString());
+    }
+
+    public static void main(String[] args) {
+        int num = 12345;
+        System.out.println("Reversed Number: " + reverseNumber(num));
+    }
+}
